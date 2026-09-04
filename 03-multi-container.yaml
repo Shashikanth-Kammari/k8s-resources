@@ -10,5 +10,5 @@ spec:
   - name: expense
     image: nginx
   - name: alma
-    image: almalinux:8
+    image: almalinux:9
     command: ["sleep", "20"]
