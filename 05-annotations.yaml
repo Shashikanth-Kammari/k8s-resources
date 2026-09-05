@@ -1,10 +1,13 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: expense
+  name: annotation-pod
   namespace: expense
-  Annotations:
+  labels:
     environment: dev
+  annotations:
+    kubernetes.io/created-by: 'shashi'
+    jenkins.build.url: 'https://jenkins.com/build/123'
 spec:
   containers:
   - name: expense-container
