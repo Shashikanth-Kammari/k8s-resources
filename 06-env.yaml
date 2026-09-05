@@ -9,6 +9,6 @@ spec:
     image: nginx
     env:
     - name: environement
-      value: dev
+      value: qa
     - brand: macys
       value: mcom
