@@ -9,6 +9,6 @@ spec:
   containers:
   - name: expense
     image: nginx
-  - name: alma
+  - name: second-container
     image: almalinux:9
     command: ["sleep", "20"]
