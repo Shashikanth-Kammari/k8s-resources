@@ -7,14 +7,17 @@ spec:
   containers:   
   - name: expense-container
     image: nginx
-    env:
-    - name: github
-      valueFrom:
-        configMapKeyRef:
-          name: expense-config
-          key: github
-    - name: database.url
-      valueFrom:
-        configMapKeyRef:
-          name: expense-config
-          key: database.url
+    envFrom:
+    - configMapRef:
+        name: expense-config
+    # env:
+    # - name: github
+    #   valueFrom:
+    #     configMapKeyRef:
+    #       name: expense-config
+    #       key: github
+    # - name: database.url
+    #   valueFrom:
+    #     configMapKeyRef:
+    #       name: expense-config
+    #       key: database.url
