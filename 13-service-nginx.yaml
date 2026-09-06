@@ -5,4 +5,8 @@ metadata:
 spec:
   selector:
     environment: dev
+    ports:
+    - protocol: TCP
+      port: 80  #service port
+      targetPort: 80 #target port of the pod/container
   
