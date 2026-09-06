@@ -5,8 +5,4 @@ metadata:
 spec:
   selector:
     environment: dev
-  type:  LoadBalancer
-  ports:
-  - name:  service-port
-    port:  80
-    targetPort:  8080
+  
