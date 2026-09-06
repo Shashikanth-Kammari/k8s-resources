@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-configmap
+  namespace: expense    
+spec:
+  containers:   
+  - name: expense-container
+    image: nginx
+    env:
+    - name: github
+      valueFrom:
+        configMapKeyRef:
+          name: expense-config
+          key: github
+    - name: database.url
+      valueFrom:
+        configMapKeyRef:
+          name: expense-config
+          key: database.url
