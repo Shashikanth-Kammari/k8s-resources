@@ -12,3 +12,16 @@ spec:
     fsType: ext4
     volumeHandle: vol-0e1f2d3c4b5a6d7e8 # Replace with your EBS volume ID 
 ---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: ebs-pvc 
+spec:
+  storageClassName: "" # Use the default storage class
+  valumeName: ebs-pv
+  accessModes:
+    - ReadWriteOnce     
+  resources:
+    requests:
+      storage: 2Gi    
+      
