@@ -1,0 +1,14 @@
+apiVersion: v1
+kind : PersistentVolume
+metadata:
+  name: ebs-pv    
+spec:
+  accessModes:
+    - ReadWriteOnce
+  capacity:   
+    storage: 5Gi 
+  csi:
+    driver: ebs.csi.aws.com
+    fsType: ext4
+    volumeHandle: vol-0e1f2d3c4b5a6d7e8 # Replace with your EBS volume ID 
+---
