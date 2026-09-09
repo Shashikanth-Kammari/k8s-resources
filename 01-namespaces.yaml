@@ -5,4 +5,3 @@ metadata:
   labels:
     app: expense
     environment: dev
-    brand: mcom
