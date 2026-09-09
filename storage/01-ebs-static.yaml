@@ -32,7 +32,7 @@ metadata:
   name: ebs-pod   
 spec:
   containers:
-    - name: ebs-container
+    - name: ebs
       image: nginx
       volumeMounts:
         - mountPath: "/usr/share/nginx/html"
