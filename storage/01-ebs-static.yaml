@@ -34,7 +34,7 @@ metadata:
     app: ebs-app  
 spec:
   containers:
-    - name: ebs-container
+    - name: nginx
       image: nginx
       volumeMounts:
         - mountPath: "/usr/share/nginx/html"
