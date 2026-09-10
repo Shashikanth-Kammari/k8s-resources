@@ -29,7 +29,9 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: ebs-pod   
+  name: ebs-pod 
+  labels:
+    app: ebs-app  
 spec:
   containers:
     - name: ebs-container
@@ -41,3 +43,18 @@ spec:
     - name: ebs-volume
       persistentVolumeClaim:
         claimName: ebs-pvc
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name:  nginx-lb
+spec:
+  selector:
+    app: ebs-app
+  type:  LoadBalancer
+  ports:
+  - protocol: TCP
+    port:  80
+    targetPort:  80
