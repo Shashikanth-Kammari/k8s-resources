@@ -28,4 +28,4 @@ spec:
   volumes:
     - name: ebs-volume
       persistentVolumeClaim:
-        claimName: ebs-pvc
+        claimName: ebs-dynamic
