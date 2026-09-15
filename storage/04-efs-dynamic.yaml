@@ -37,6 +37,6 @@ spec:
     app: efs-dynamic-app
   type:  LoadBalancer   
   ports:
-  - name:  Port Name
-    port:  Port
-    protocol: TCP 
+  - protocol: TCP
+    port:  80
+    targetPort:  80 
