@@ -23,6 +23,8 @@ metadata:
 spec:
   accessModes:
     - ReadWriteMany 
+  storageClassName: ""
+  volumeName: efs-static
   resources:
     requests:
       storage: 5Gi  
