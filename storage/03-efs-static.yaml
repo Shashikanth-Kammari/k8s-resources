@@ -34,6 +34,8 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: efs-static-pod  
+  labels:
+    app: efs-app
 spec:
   containers:
     - name: efs-static-container
@@ -46,5 +48,18 @@ spec:
       persistentVolumeClaim:
         claimName: efs-static-claim
         
-      
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name:  nginx-lb
+spec:
+  selector:
+    app: efs-app
+  type:  LoadBalancer
+  ports:
+  - protocol: TCP
+    port:  80
+    targetPort:  80
       
