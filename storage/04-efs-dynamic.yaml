@@ -10,3 +10,30 @@ spec:
     requests:
       storage: 5Gi  
 ---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: efs-dynamic-pod  
+  labels:
+    app: efs-dynamic-app    
+spec:
+  containers: 
+    - name: efs-dynamic-container
+      image: nginx
+      volumeMounts:
+        - name: efs-dynamic-volume
+          mountPath: /usr/share/nginx/html
+  volumes:
+    - name: efs-dynamic-volume  
+      persistentVolumeClaim:
+        claimName: efs-dynamic-claim  
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name:  efs-dynamic-lb   
+spec:
+  selector:   
+    app: efs-dynamic-app
+  type:  LoadBalancer   
+  
