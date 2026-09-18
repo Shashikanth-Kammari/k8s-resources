@@ -30,8 +30,8 @@ spec:
                 - pod-1
           topologyKey: kubernetes.io/hostname
   containers:
-  - name: with-node-affinity
-    image: registry.k8s.io/pause:3.8
+  - name: nginx
+    image: nginx
 ---
 
 apiVersion: v1
