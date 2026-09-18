@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+  labels:
+    env: test
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    imagePullPolicy: always
+  tolerations:
+  - key: "project"
+    operator: "equal"
+    value: "expense"
+    effect: "NoSchedule"
